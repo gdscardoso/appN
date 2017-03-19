@@ -1,0 +1,276 @@
+<div class="app-toolbar mat-elevation-z3">
+    <md-toolbar color="primary" class="app-toolbar">
+        <button class="app-icon-button" (click)="sidenav.toggle()">
+            <i class="material-icons app-toolbar-menu">menu</i>
+        </button>
+        VerdeCard
+        <span class="app-toolbar-filler"></span>
+    </md-toolbar>
+</div>
+
+
+<div class="app-content">
+
+    <md-card>
+        <form autocomplete="off" (submit)="doSalvar()" ngForm="model">
+            <md-input-container>
+                <input mdInput type="text" placeholder="Nome" id="nome" name="nome" ([ngModel])="model.nome">
+            </md-input-container>
+
+            <md-input-container>
+                <input mdInput type="number" placeholder="Idade" id="idade" name="idade" ([ngModel])="model.idade">
+            </md-input-container>
+
+            <button md-raised-button color="primary" type="submit">Salvar</button>
+            <br/>
+            {{model || json}}
+        </form>
+    </md-card>
+
+
+    <br/>
+    <div style="padding: 0px">
+        <md-card *ngFor="let item of items | async" style="margin-top: 0px">
+            <md-card-avatar>
+                <md-icon color="primary">add</md-icon>
+                {{item.nome}}
+            </md-card-avatar>
+        </md-card>
+    </div>
+
+    <ul>
+        <li class="text" *ngFor="let item of items | async">
+            {{item.nome}}
+        </li>
+    </ul>
+
+    <!--<md-card>-->
+    <!--<button md-button>FLAT</button>-->
+    <!--<button md-raised-button md-tooltip="This is a tooltip!">RAISED</button>-->
+    <!--<button md-raised-button color="primary">PRIMARY RAISED</button>-->
+    <!--<button md-raised-button color="accent">ACCENT RAISED</button>-->
+    <!--</md-card>-->
+
+    <!--<md-card>-->
+    <!--<button md-button>FLAT</button>-->
+    <!--<button md-raised-button md-tooltip="This is a tooltip!">RAISED</button>-->
+    <!--<button md-raised-button color="primary">PRIMARY RAISED</button>-->
+    <!--<button md-raised-button color="accent">ACCENT RAISED</button>-->
+    <!--</md-card>-->
+
+
+    <!--<md-card>-->
+    <!--<button md-button>FLAT</button>-->
+    <!--<button md-raised-button md-tooltip="This is a tooltip!">RAISED</button>-->
+    <!--<button md-raised-button color="primary">PRIMARY RAISED</button>-->
+    <!--<button md-raised-button color="accent">ACCENT RAISED</button>-->
+    <!--</md-card>-->
+
+    <!--<md-card>-->
+    <!--<md-checkbox>Unchecked</md-checkbox>-->
+    <!--<md-checkbox [checked]="true">Checked</md-checkbox>-->
+    <!--<md-checkbox [indeterminate]="true">Indeterminate</md-checkbox>-->
+    <!--<md-checkbox [disabled]="true">Disabled</md-checkbox>-->
+    <!--</md-card>-->
+
+    <!--<md-card>-->
+    <!--<md-radio-button name="symbol">Alpha</md-radio-button>-->
+    <!--<md-radio-button name="symbol">Beta</md-radio-button>-->
+    <!--<md-radio-button name="symbol" disabled>Gamma</md-radio-button>-->
+    <!--</md-card>-->
+
+    <!--<md-card class="app-input-section">-->
+    <!--<md-input-container class="example-full-width">-->
+    <!--<input mdInput placeholder="Company (disabled)" disabled value="Google">-->
+    <!--</md-input-container>-->
+
+    <!--</md-card>-->
+
+    <!--<md-card>-->
+    <!--<md-list class="app-list">-->
+    <!--<md-list-item *ngFor="let food of foods">-->
+    <!--<h3 md-line>{{food.name}}</h3>-->
+    <!--<p md-line class="demo-secondary-text">{{food.rating}}</p>-->
+    <!--</md-list-item>-->
+    <!--</md-list>-->
+    <!--</md-card>-->
+
+    <!--<md-card>-->
+    <!--<md-spinner class="app-spinner"></md-spinner>-->
+    <!--<md-spinner color="accent" class="app-spinner"></md-spinner>-->
+    <!--</md-card>-->
+
+    <!--<md-card>-->
+    <!--<label>-->
+    <!--Indeterminate progress-bar-->
+    <!--<md-progress-bar-->
+    <!--class="app-progress"-->
+    <!--mode="indeterminate"-->
+    <!--aria-label="Indeterminate progress-bar example"></md-progress-bar>-->
+    <!--</label>-->
+
+    <!--<label>-->
+    <!--Determinate progress bar - {{progress}}%-->
+    <!--<md-progress-bar-->
+    <!--class="app-progress"-->
+    <!--color="accent"-->
+    <!--mode="determinate"-->
+    <!--[value]="progress"-->
+    <!--aria-label="Determinate progress-bar example"></md-progress-bar>-->
+    <!--</label>-->
+    <!--</md-card>-->
+
+    <!--<md-card>-->
+    <!--<md-tab-group>-->
+    <!--<md-tab label="Earth">-->
+    <!--<p>EARTH</p>-->
+    <!--</md-tab>-->
+    <!--<md-tab label="Fire">-->
+    <!--<p>FIRE</p>-->
+    <!--</md-tab>-->
+    <!--</md-tab-group>-->
+    <!--</md-card>-->
+
+    <!--<md-card>-->
+    <!--<md-icon>settings</md-icon>-->
+    <!--</md-card>-->
+
+    <!--<md-card>-->
+    <!--<button md-button [md-menu-trigger-for]="menu">-->
+    <!--Menu-->
+    <!--</button>-->
+    <!--</md-card>-->
+
+    <!--<md-menu #menu="mdMenu">-->
+    <!--<button md-menu-item>Lemon</button>-->
+    <!--<button md-menu-item>Lime</button>-->
+    <!--<button md-menu-item>Banana</button>-->
+    <!--</md-menu>-->
+
+    <!--<md-card>-->
+    <!--<p>Last dialog result: {{lastDialogResult}}</p>-->
+    <!--<button md-raised-button (click)="openDialog()">DIALOG</button>-->
+    <!--<button md-raised-button (click)="showSnackbar()">SNACKBAR</button>-->
+    <!--</md-card>-->
+
+</div>
+
+
+<!--<md-sidenav-container fullscreen>-->
+
+<!--<md-toolbar color="primary" class="mat-elevation-z6">-->
+<!--<button class="app-icon-button" (click)="sidenav.toggle()">-->
+<!--<i class="material-icons app-toolbar-menu">menu</i>-->
+<!--</button>-->
+<!--VerdeCard-->
+<!--<span class="app-toolbar-filler"></span>-->
+<!--<button md-button>Usuário</button>-->
+<!--</md-toolbar>-->
+
+<!--<md-sidenav #sidenav class="app-sidenav">-->
+<!--Menu-->
+<!--</md-sidenav>-->
+
+<!--<div class="app-content">-->
+
+<!--<md-card>-->
+<!--<button md-button>FLAT</button>-->
+<!--<button md-raised-button md-tooltip="This is a tooltip!">RAISED</button>-->
+<!--<button md-raised-button color="primary">PRIMARY RAISED</button>-->
+<!--<button md-raised-button color="accent">ACCENT RAISED</button>-->
+<!--</md-card>-->
+
+<!--<md-card>-->
+<!--<md-checkbox>Unchecked</md-checkbox>-->
+<!--<md-checkbox [checked]="true">Checked</md-checkbox>-->
+<!--<md-checkbox [indeterminate]="true">Indeterminate</md-checkbox>-->
+<!--<md-checkbox [disabled]="true">Disabled</md-checkbox>-->
+<!--</md-card>-->
+
+<!--<md-card>-->
+<!--<md-radio-button name="symbol">Alpha</md-radio-button>-->
+<!--<md-radio-button name="symbol">Beta</md-radio-button>-->
+<!--<md-radio-button name="symbol" disabled>Gamma</md-radio-button>-->
+<!--</md-card>-->
+
+<!--<md-card class="app-input-section">-->
+<!--<md-input-container class="example-full-width">-->
+<!--<input mdInput placeholder="Company (disabled)" disabled value="Google">-->
+<!--</md-input-container>-->
+
+<!--</md-card>-->
+
+<!--<md-card>-->
+<!--<md-list class="app-list">-->
+<!--<md-list-item *ngFor="let food of foods">-->
+<!--<h3 md-line>{{food.name}}</h3>-->
+<!--<p md-line class="demo-secondary-text">{{food.rating}}</p>-->
+<!--</md-list-item>-->
+<!--</md-list>-->
+<!--</md-card>-->
+
+<!--<md-card>-->
+<!--<md-spinner class="app-spinner"></md-spinner>-->
+<!--<md-spinner color="accent" class="app-spinner"></md-spinner>-->
+<!--</md-card>-->
+
+<!--<md-card>-->
+<!--<label>-->
+<!--Indeterminate progress-bar-->
+<!--<md-progress-bar-->
+<!--class="app-progress"-->
+<!--mode="indeterminate"-->
+<!--aria-label="Indeterminate progress-bar example"></md-progress-bar>-->
+<!--</label>-->
+
+<!--<label>-->
+<!--Determinate progress bar - {{progress}}%-->
+<!--<md-progress-bar-->
+<!--class="app-progress"-->
+<!--color="accent"-->
+<!--mode="determinate"-->
+<!--[value]="progress"-->
+<!--aria-label="Determinate progress-bar example"></md-progress-bar>-->
+<!--</label>-->
+<!--</md-card>-->
+
+<!--<md-card>-->
+<!--<md-tab-group>-->
+<!--<md-tab label="Earth">-->
+<!--<p>EARTH</p>-->
+<!--</md-tab>-->
+<!--<md-tab label="Fire">-->
+<!--<p>FIRE</p>-->
+<!--</md-tab>-->
+<!--</md-tab-group>-->
+<!--</md-card>-->
+
+<!--<md-card>-->
+<!--<md-icon>settings</md-icon>-->
+<!--</md-card>-->
+
+<!--<md-card>-->
+<!--<button md-button [md-menu-trigger-for]="menu">-->
+<!--Menu-->
+<!--</button>-->
+<!--</md-card>-->
+
+<!--<md-menu #menu="mdMenu">-->
+<!--<button md-menu-item>Lemon</button>-->
+<!--<button md-menu-item>Lime</button>-->
+<!--<button md-menu-item>Banana</button>-->
+<!--</md-menu>-->
+
+<!--<md-card>-->
+<!--<p>Last dialog result: {{lastDialogResult}}</p>-->
+<!--<button md-raised-button (click)="openDialog()">DIALOG</button>-->
+<!--<button md-raised-button (click)="showSnackbar()">SNACKBAR</button>-->
+<!--</md-card>-->
+
+<!--</div>-->
+
+<!--</md-sidenav-container>-->
+
+<!--<span class="app-action" [class.m2app-dark]="isDarkTheme">-->
+<!--<button md-fab><md-icon>check circle</md-icon></button>-->
+<!--</span>-->
