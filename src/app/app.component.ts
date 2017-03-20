@@ -9,44 +9,22 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    isDarkTheme: boolean = false;
-    lastDialogResult: string;
-
-    foods: any[] = [
-        {name: 'Pizza', rating: 'Excellent'},
-        {name: 'Burritos', rating: 'Great'},
-        {name: 'French fries', rating: 'Pretty good'},
-    ];
-
     items: FirebaseListObservable<any[]>;
-    progress: number = 0;
-
-    model: ModelForm;
+    model: Cliente = new Cliente();
 
     constructor(private _dialog: MdDialog, private _snackbar: MdSnackBar, private _af: AngularFire) {
-        // Update the value for the progress-bar on an interval.
-        setInterval(() => {
-            this.progress = (this.progress + Math.floor(Math.random() * 4) + 1) % 100;
-        }, 200);
-
         this.items = this._af.database.list("clientes");
-    }
-
-    openDialog() {
-    }
-
-    showSnackbar() {
-        this._snackbar.open('YUM SNACKS', 'CHEW');
+        this.items.subscribe(cliente => console.log(cliente));
     }
 
     doSalvar() {
-        console.log(this.model);
-        // this.items.push();
+        this.items.update(this.model.nome, this.model);
+        this.model = new Cliente();
     }
+
 }
 
-
-export interface ModelForm {
-    nome?: string,
-    idade?: number
+export class Cliente {
+    nome: string;
+    idade: number;
 }

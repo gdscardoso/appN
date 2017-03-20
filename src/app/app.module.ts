@@ -4,11 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {AngularFireModule} from "angularfire2";
 import 'hammerjs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {AngularFireModule} from "angularfire2";
 
 
 export const firebaseConfig = {

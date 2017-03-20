@@ -10,39 +10,28 @@
 
 
 <div class="app-content">
-
     <md-card>
-        <form autocomplete="off" (submit)="doSalvar()" ngForm="model">
+        <form autocomplete="off" (submit)="doSalvar(model)" >
             <md-input-container>
-                <input mdInput type="text" placeholder="Nome" id="nome" name="nome" ([ngModel])="model.nome">
+                <input mdInput type="text" placeholder="Nome" id="nome" name="nome" [(ngModel)]="model.nome" required>
             </md-input-container>
 
             <md-input-container>
-                <input mdInput type="number" placeholder="Idade" id="idade" name="idade" ([ngModel])="model.idade">
+                <input mdInput type="number" placeholder="Idade" id="idade" name="idade" [(ngModel)]="model.idade">
             </md-input-container>
 
             <button md-raised-button color="primary" type="submit">Salvar</button>
             <br/>
-            {{model || json}}
+            {{model | json}}
         </form>
     </md-card>
 
-
-    <br/>
-    <div style="padding: 0px">
-        <md-card *ngFor="let item of items | async" style="margin-top: 0px">
-            <md-card-avatar>
-                <md-icon color="primary">add</md-icon>
-                {{item.nome}}
-            </md-card-avatar>
+    <div>
+        <md-card *ngFor="let item of items | async">
+            {{item.nome}} {{item.$key}}
         </md-card>
     </div>
 
-    <ul>
-        <li class="text" *ngFor="let item of items | async">
-            {{item.nome}}
-        </li>
-    </ul>
 
     <!--<md-card>-->
     <!--<button md-button>FLAT</button>-->
