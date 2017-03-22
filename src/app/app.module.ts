@@ -9,6 +9,7 @@ import 'hammerjs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ExpandableCardComponent } from './expandable-card/expandable-card.component';
 
 
 export const firebaseConfig = {
@@ -21,7 +22,8 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ExpandableCardComponent
   ],
   imports: [
     BrowserModule,
