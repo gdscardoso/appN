@@ -26,8 +26,7 @@
         </form>
     </md-card>
 
-
-    <ul class="collapsible popout" data-collapsible="accordion">
+    <ul class="collapsible popout">
         <li *ngFor="let item of items | async">
             <div class="collapsible-header">
                 <i class="material-icons red-text darken-1">report_problem</i>
@@ -35,13 +34,13 @@
 
             </div>
             <div class="collapsible-body">
-                <div class="s6">
+                <div class="col s6">
                     <span>Nome: {{item?.nome}}</span>
                 </div>
-                <div class="s6">
+                <div class="col s6">
                     <span>Idade: {{item?.idade}}</span>
                 </div>
-                <div class="s12">
+                <div class="col s12">
                     <code>{{ item | json }}</code>
                 </div>
             </div>
