@@ -21,10 +21,13 @@
       "styles": [
         "styles.css",
         "material2-app-theme.scss"
+
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
-        "../node_modules/hammerjs/hammer.js"
+        "../node_modules/hammerjs/hammer.js",
+        "../node_modules/materialize-css/dist/js/materialize.js",
+        "../node_modules/firebase-util/dist/firebase-util.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

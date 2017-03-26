@@ -5,11 +5,12 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {AngularFireModule} from "angularfire2";
+import { MaterializeModule } from 'angular2-materialize';
+
 import 'hammerjs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ExpandableCardComponent } from './expandable-card/expandable-card.component';
 
 
 export const firebaseConfig = {
@@ -22,8 +23,7 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ExpandableCardComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +31,7 @@ export const firebaseConfig = {
     HttpModule,
     MaterialModule,
     FlexLayoutModule,
+    MaterializeModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AppRoutingModule
   ],

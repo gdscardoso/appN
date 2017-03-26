@@ -1,6 +1,7 @@
 import {Component, Optional} from '@angular/core';
 import {MdDialog, MdDialogRef, MdSnackBar} from '@angular/material';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import {Observable} from "rxjs";
 
 
 @Component({
@@ -14,11 +15,12 @@ export class AppComponent {
 
     constructor(private _dialog: MdDialog, private _snackbar: MdSnackBar, private _af: AngularFire) {
         this.items = this._af.database.list("clientes");
-        this.items.subscribe(cliente => console.log(cliente));
+        this.items.subscribe(console.log);
+
     }
 
     doSalvar() {
-        this.items.update(this.model.nome, this.model);
+        this.items.push(this.model);
         this.model = new Cliente();
     }
 

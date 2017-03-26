@@ -11,29 +11,48 @@
 
 <div class="app-content">
     <md-card>
-        <form autocomplete="off" (submit)="doSalvar(model)" >
+        <form autocomplete="off" (submit)="doSalvar(model)">
+
             <md-input-container>
-                <input mdInput type="text" placeholder="Nome" id="nome" name="nome" [(ngModel)]="model.nome" required #minhaVar>
+                <input mdInput type="text" placeholder="Informe seu nome" id="nome" name="nome" [(ngModel)]="model.nome" required>
             </md-input-container>
 
             <md-input-container>
-                <input mdInput type="number" placeholder="Idade" id="idade" name="idade" [(ngModel)]="model.idade">
+                <input mdInput type="number" placeholder="Informe sua idade" id="idade" name="idade" [(ngModel)]="model.idade" required>
             </md-input-container>
 
             <button md-raised-button color="primary" type="submit">Salvar</button>
-            <br/>
-            {{model | json}}
+
         </form>
     </md-card>
 
-    <app-expandable-card *ngFor="let item of items | async">
-       {{item.nome}}
-    </app-expandable-card>
+
+    <ul class="collapsible popout" data-collapsible="accordion">
+        <li *ngFor="let item of items | async">
+            <div class="collapsible-header">
+                <i class="material-icons red-text darken-1">report_problem</i>
+                {{item.nome}} <span class="badge z-depth-1-half blue darken-1 white-text">Bug</span>
+
+            </div>
+            <div class="collapsible-body">
+                <div class="s6">
+                    <span>Nome: {{item?.nome}}</span>
+                </div>
+                <div class="s6">
+                    <span>Idade: {{item?.idade}}</span>
+                </div>
+                <div class="s12">
+                    <code>{{ item | json }}</code>
+                </div>
+            </div>
+        </li>
+    </ul>
+
 
     <!--<div>-->
-        <!--<md-card *ngFor="let item of items | async">-->
-            <!--{{item.nome}} {{item.$key}}-->
-        <!--</md-card>-->
+    <!--<md-card *ngFor="let item of items | async">-->
+    <!--{{item.nome}} {{item.$key}}-->
+    <!--</md-card>-->
     <!--</div>-->
 
 
