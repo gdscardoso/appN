@@ -1,7 +1,5 @@
-import {Component, Optional} from '@angular/core';
-import {MdDialog, MdDialogRef, MdSnackBar} from '@angular/material';
-import {AngularFire, FirebaseListObservable} from 'angularfire2';
-import {Observable} from "rxjs";
+import {Component} from "@angular/core";
+import {AngularFire, FirebaseListObservable} from "angularfire2";
 
 
 @Component({
@@ -13,10 +11,11 @@ export class AppComponent {
     items: FirebaseListObservable<any[]>;
     model: Cliente = new Cliente();
 
-    constructor(private _dialog: MdDialog, private _snackbar: MdSnackBar, private _af: AngularFire) {
-        this.items = this._af.database.list("clientes");
+    constructor(
+        private _af: AngularFire
+    ) {
+        this.items = this._af.database.list("task");
         this.items.subscribe(console.log);
-
     }
 
     doSalvar() {
@@ -27,6 +26,9 @@ export class AppComponent {
 }
 
 export class Cliente {
-    nome: string;
-    idade: number;
+    id: number;
+    chamado: number;
+    setor: string;
+    tipo: string;
+    usuarioAbertura: string;
 }

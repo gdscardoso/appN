@@ -1,0 +1,45 @@
+{
+  "task": [
+    {
+      "id": 1,
+      "chamado": 1,
+      "tipo": "BUG",
+      "setor": "Risco",
+      "dataAbertura": null,
+      "usuarioAbertura": "Guilherme Cardoso",
+      "usuarioFechamento": null,
+      "descricao": "Apresenta entrar na tela de consulta de operacoes de cartao, nao estamos conseguinte consultar para informar ao cliente."
+    },
+    {
+      "id": 2,
+      "chamado": 2,
+      "tipo": "BUG",
+      "setor": "Servicos",
+      "dataAbertura": null,
+      "usuarioAbertura": "Guilherme Cardoso",
+      "usuarioFechamento": null,
+      "descricao": "Apresenta entrar na tela de consulta de operacoes de cartao, nao estamos conseguinte consultar para informar ao cliente."
+    },
+    {
+      "id": 3,
+      "chamado": 3,
+      "tipo": "BUG",
+      "setor": "Cobranca",
+      "dataAbertura": null,
+      "usuarioAbertura": "Guilherme Cardoso",
+      "usuarioFechamento": null,
+      "descricao": "Apresenta entrar na tela de consulta de operacoes de cartao, nao estamos conseguinte consultar para informar ao cliente."
+    },
+    {
+      "id": 4,
+      "chamado": 4,
+      "tipo": "MELHORIA",
+      "setor": "Operacoes",
+      "dataAbertura": null,
+      "usuarioAbertura": "Guilherme Cardoso",
+      "usuarioFechamento": null,
+      "descricao": "Apresenta entrar na tela de consulta de operacoes de cartao, nao estamos conseguinte consultar para informar ao cliente."
+    }
+  ]
+}
+

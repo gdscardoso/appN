@@ -1,16 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
+import {BrowserModule} from "@angular/platform-browser";
+import {NgModule} from "@angular/core";
+import {FormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
+import {MaterialModule} from "@angular/material";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {AngularFireModule} from "angularfire2";
-import { MaterializeModule } from 'angular2-materialize';
+import {MaterializeModule} from "angular2-materialize";
+import {AppComponent} from "./app.component";
+import "hammerjs";
 
-import 'hammerjs';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from "./app-routing.module";
 
 
 export const firebaseConfig = {
@@ -19,7 +18,7 @@ export const firebaseConfig = {
   databaseURL: 'https://verdecardplantao.firebaseio.com',
   storageBucket: 'verdecardplantao.appspot.com',
   messagingSenderId: '928074002617'
-}
+};
 
 @NgModule({
   declarations: [

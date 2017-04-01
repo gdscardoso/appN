@@ -1,6 +1,6 @@
 <div class="app-toolbar mat-elevation-z3">
     <md-toolbar color="primary" class="app-toolbar">
-        <button class="app-icon-button" (click)="sidenav.toggle()">
+        <button class="app-icon-button">
             <i class="material-icons app-toolbar-menu">menu</i>
         </button>
         VerdeCard
@@ -26,20 +26,27 @@
         </form>
     </md-card>
 
+
     <ul class="collapsible popout">
         <li *ngFor="let item of items | async">
-            <div class="collapsible-header">
-                <i class="material-icons red-text darken-1">report_problem</i>
-                {{item.nome}} <span class="badge z-depth-1-half blue darken-1 white-text">Bug</span>
+            <div class="collapsible-header" style="height: 2rem; border-bottom: 2px solid #ddd">
+                <div class="row" fxLayout="row">
+                    <i fxFlex="5" class="material-icons red-text darken-1">report_problem</i>
+                    <span fxFlex="10">#{{item.id}}</span>
+                    <span fxFlex="75" class="truncate">{{item?.descricao}}</span>
+                    <span fxFlex="10" class="badge z-depth-1-half blue darken-1 white-text">{{item?.tipo}}</span>
+
+                </div>
 
             </div>
             <div class="collapsible-body">
                 <div class="col s6">
-                    <span>Nome: {{item?.nome}}</span>
+                    <span>Descricao: {{item?.descricao}}</span>
                 </div>
                 <div class="col s6">
-                    <span>Idade: {{item?.idade}}</span>
+                    <span>Data: {{item?.dataAbertura}}</span>
                 </div>
+                <div class="divider col s12"></div>
                 <div class="col s12">
                     <code>{{ item | json }}</code>
                 </div>
